@@ -36,7 +36,7 @@ A microservices architecture project using Spring Boot and Spring AI.
 
 ### Prerequisites
 - Java 17+
-- Maven 3.6+
+- Gradle 8.5+ (or use the included Gradle wrapper)
 - OpenAI API Key (for AI service)
 
 ### Running the Application
@@ -54,22 +54,19 @@ A microservices architecture project using Spring Boot and Spring AI.
 
 3. **Build the project**
    ```bash
-   mvn clean install
+   ./gradlew build
    ```
 
 4. **Run individual services**
    ```bash
    # Terminal 1 - Gateway Service
-   cd gateway-service
-   mvn spring-boot:run
+   ./gradlew :gateway-service:bootRun
    
    # Terminal 2 - User Service
-   cd user-service
-   mvn spring-boot:run
+   ./gradlew :user-service:bootRun
    
    # Terminal 3 - AI Service
-   cd ai-service
-   mvn spring-boot:run
+   ./gradlew :ai-service:bootRun
    ```
 
 5. **Or run with Docker**
@@ -101,7 +98,7 @@ A microservices architecture project using Spring Boot and Spring AI.
 - **Spring Cloud Gateway** - API Gateway
 - **Spring Data JPA** - Data persistence
 - **H2 Database** - In-memory database
-- **Maven** - Build tool
+- **Gradle** - Build tool
 - **Docker** - Containerization
 - **OpenAI API** - AI text generation
 
@@ -110,18 +107,21 @@ A microservices architecture project using Spring Boot and Spring AI.
 ### Project Structure
 ```
 spring-ai-microservices/
-├── pom.xml                    # Parent POM
+├── build.gradle               # Root Gradle build file
+├── settings.gradle            # Gradle settings
+├── gradlew                    # Gradle wrapper script
+├── gradlew.bat                # Gradle wrapper script (Windows)
 ├── shared-common/             # Shared module
-│   ├── pom.xml
+│   ├── build.gradle
 │   └── src/main/java/com/example/springai/common/
 ├── user-service/              # User microservice
-│   ├── pom.xml
+│   ├── build.gradle
 │   └── src/main/java/com/example/springai/user/
 ├── ai-service/                # AI microservice
-│   ├── pom.xml
+│   ├── build.gradle
 │   └── src/main/java/com/example/springai/ai/
 ├── gateway-service/           # Gateway microservice
-│   ├── pom.xml
+│   ├── build.gradle
 │   └── src/main/java/com/example/springai/gateway/
 ├── Dockerfile
 ├── docker-compose.yml

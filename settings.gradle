@@ -1,0 +1,6 @@
+rootProject.name = 'spring-ai-microservices'
+
+include 'shared-common'
+include 'user-service'
+include 'ai-service'
+include 'gateway-service'
