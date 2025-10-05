@@ -1,3 +1,16 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.0'
+}
+
+// Disable bootJar task for library module
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'com.fasterxml.jackson.core:jackson-annotations'

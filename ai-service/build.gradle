@@ -1,7 +1,12 @@
+plugins {
+    id 'org.springframework.boot' version '3.2.0'
+}
+
 dependencies {
     implementation project(':shared-common')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+    // TODO: Add Spring AI dependency once BOM is properly configured
+    // implementation 'org.springframework.ai:spring-ai-openai'
 }
